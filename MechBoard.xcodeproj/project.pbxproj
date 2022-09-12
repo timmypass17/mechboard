@@ -11,8 +11,9 @@
 		32804B3328C2D82600C24238 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32804B3228C2D82600C24238 /* ContentView.swift */; };
 		32804B3528C2D82700C24238 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32804B3428C2D82700C24238 /* Assets.xcassets */; };
 		32804B3828C2D82700C24238 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32804B3728C2D82700C24238 /* Preview Assets.xcassets */; };
-		32804B3A28C2D82700C24238 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32804B3928C2D82700C24238 /* Persistence.swift */; };
 		32804B3D28C2D82700C24238 /* MechBoard.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 32804B3B28C2D82700C24238 /* MechBoard.xcdatamodeld */; };
+		32804B4628C2DB9500C24238 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32804B4528C2DB9500C24238 /* CloudKit.framework */; };
+		32804B4828C2F5A800C24238 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32804B4728C2F5A800C24238 /* AuthViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,8 +22,10 @@
 		32804B3228C2D82600C24238 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		32804B3428C2D82700C24238 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		32804B3728C2D82700C24238 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		32804B3928C2D82700C24238 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		32804B3C28C2D82700C24238 /* MechBoard.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MechBoard.xcdatamodel; sourceTree = "<group>"; };
+		32804B4328C2DADC00C24238 /* MechBoard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MechBoard.entitlements; sourceTree = "<group>"; };
+		32804B4528C2DB9500C24238 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		32804B4728C2F5A800C24238 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32804B4628C2DB9500C24238 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,6 +45,7 @@
 			children = (
 				32804B2F28C2D82600C24238 /* MechBoard */,
 				32804B2E28C2D82600C24238 /* Products */,
+				32804B4428C2DB9500C24238 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,10 +60,11 @@
 		32804B2F28C2D82600C24238 /* MechBoard */ = {
 			isa = PBXGroup;
 			children = (
+				32804B4328C2DADC00C24238 /* MechBoard.entitlements */,
 				32804B3028C2D82600C24238 /* MechBoardApp.swift */,
 				32804B3228C2D82600C24238 /* ContentView.swift */,
+				32804B4728C2F5A800C24238 /* AuthViewModel.swift */,
 				32804B3428C2D82700C24238 /* Assets.xcassets */,
-				32804B3928C2D82700C24238 /* Persistence.swift */,
 				32804B3B28C2D82700C24238 /* MechBoard.xcdatamodeld */,
 				32804B3628C2D82700C24238 /* Preview Content */,
 			);
@@ -71,6 +77,14 @@
 				32804B3728C2D82700C24238 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		32804B4428C2DB9500C24238 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				32804B4528C2DB9500C24238 /* CloudKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,7 +157,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32804B3A28C2D82700C24238 /* Persistence.swift in Sources */,
+				32804B4828C2F5A800C24238 /* AuthViewModel.swift in Sources */,
 				32804B3328C2D82600C24238 /* ContentView.swift in Sources */,
 				32804B3128C2D82600C24238 /* MechBoardApp.swift in Sources */,
 				32804B3D28C2D82700C24238 /* MechBoard.xcdatamodeld in Sources */,
@@ -272,9 +286,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MechBoard/MechBoard.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MechBoard/Preview Content\"";
+				DEVELOPMENT_TEAM = 8KHAQ7W8KV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -300,9 +316,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MechBoard/MechBoard.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MechBoard/Preview Content\"";
+				DEVELOPMENT_TEAM = 8KHAQ7W8KV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
