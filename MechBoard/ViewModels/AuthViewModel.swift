@@ -14,7 +14,9 @@ import CloudKit
 
 @MainActor
 class AuthViewModel: ObservableObject {
-    
+    @Published var showAlert = false
+
+    // delete later
     @Published var isSignedInToiCloud: Bool = false
     @Published var permissionStatus: Bool = false
     @Published var error: String = ""
@@ -35,16 +37,22 @@ class AuthViewModel: ObservableObject {
             switch status {
             case .couldNotDetermine:
                 self.error = CloudKitError.iCloudAccountNotDetermined.rawValue
+                self.showAlert = true
             case .available:
                 self.isSignedInToiCloud = true // updating change on background thread, @MainActor fixes that
+                self.showAlert = false
             case .restricted:
                 self.error = CloudKitError.iCloudAccountRestricted.rawValue
+                self.showAlert = true
             case .noAccount:
                 self.error = CloudKitError.iCloudAccountNotFound.rawValue
+                self.showAlert = true
             case .temporarilyUnavailable:
                 self.error = CloudKitError.iCloudAccountUnavailable.rawValue
+                self.showAlert = true
             @unknown default:
                 self.error = CloudKitError.iCloudUnknown.rawValue
+                self.showAlert = true
             }
         } catch {
             print("Error calling getiCloudStatus: \(error)")
@@ -79,7 +87,7 @@ class AuthViewModel: ObservableObject {
         }
     }
     
-    // Can discover users by record id, email, phone number. Can look up multible users at once.
+    // note: Can discover users by record id, email, phone number. Can look up multible users at once.
     func discoveriCloudUser() async {
         do {
             let uid = try await CKContainer.default().userRecordID()    // get id of current user

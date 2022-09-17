@@ -8,24 +8,38 @@
 
 /* Begin PBXBuildFile section */
 		32804B3128C2D82600C24238 /* MechBoardApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32804B3028C2D82600C24238 /* MechBoardApp.swift */; };
-		32804B3328C2D82600C24238 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32804B3228C2D82600C24238 /* ContentView.swift */; };
+		32804B3328C2D82600C24238 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32804B3228C2D82600C24238 /* HomeView.swift */; };
 		32804B3528C2D82700C24238 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32804B3428C2D82700C24238 /* Assets.xcassets */; };
 		32804B3828C2D82700C24238 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32804B3728C2D82700C24238 /* Preview Assets.xcassets */; };
 		32804B3D28C2D82700C24238 /* MechBoard.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 32804B3B28C2D82700C24238 /* MechBoard.xcdatamodeld */; };
 		32804B4628C2DB9500C24238 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32804B4528C2DB9500C24238 /* CloudKit.framework */; };
 		32804B4828C2F5A800C24238 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32804B4728C2F5A800C24238 /* AuthViewModel.swift */; };
+		32F04E1F28D64EE0000BB7A9 /* PostItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F04E1E28D64EE0000BB7A9 /* PostItem.swift */; };
+		32F04E2228D64F0A000BB7A9 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F04E2128D64F0A000BB7A9 /* Post.swift */; };
+		32F04E2428D6503A000BB7A9 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F04E2328D6503A000BB7A9 /* HomeViewModel.swift */; };
+		32F04E2828D662A1000BB7A9 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F04E2728D662A1000BB7A9 /* ProfileView.swift */; };
+		32F04E2A28D662DE000BB7A9 /* CreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F04E2928D662DE000BB7A9 /* CreateView.swift */; };
+		32F04E2C28D662F4000BB7A9 /* FriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F04E2B28D662F4000BB7A9 /* FriendView.swift */; };
+		32F04E2E28D662FC000BB7A9 /* InboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F04E2D28D662FC000BB7A9 /* InboxView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		32804B2D28C2D82600C24238 /* MechBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MechBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32804B3028C2D82600C24238 /* MechBoardApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MechBoardApp.swift; sourceTree = "<group>"; };
-		32804B3228C2D82600C24238 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		32804B3228C2D82600C24238 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		32804B3428C2D82700C24238 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		32804B3728C2D82700C24238 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		32804B3C28C2D82700C24238 /* MechBoard.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MechBoard.xcdatamodel; sourceTree = "<group>"; };
 		32804B4328C2DADC00C24238 /* MechBoard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MechBoard.entitlements; sourceTree = "<group>"; };
 		32804B4528C2DB9500C24238 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		32804B4728C2F5A800C24238 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		32F04E1E28D64EE0000BB7A9 /* PostItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostItem.swift; sourceTree = "<group>"; };
+		32F04E2128D64F0A000BB7A9 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		32F04E2328D6503A000BB7A9 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		32F04E2728D662A1000BB7A9 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		32F04E2928D662DE000BB7A9 /* CreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateView.swift; sourceTree = "<group>"; };
+		32F04E2B28D662F4000BB7A9 /* FriendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendView.swift; sourceTree = "<group>"; };
+		32F04E2D28D662FC000BB7A9 /* InboxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,11 +76,16 @@
 			children = (
 				32804B4328C2DADC00C24238 /* MechBoard.entitlements */,
 				32804B3028C2D82600C24238 /* MechBoardApp.swift */,
-				32804B3228C2D82600C24238 /* ContentView.swift */,
-				32804B4728C2F5A800C24238 /* AuthViewModel.swift */,
+				32F04E1D28D64E68000BB7A9 /* ViewModels */,
+				32F04E2028D64EF3000BB7A9 /* Models */,
+				32F04E1C28D64E54000BB7A9 /* Home */,
 				32804B3428C2D82700C24238 /* Assets.xcassets */,
 				32804B3B28C2D82700C24238 /* MechBoard.xcdatamodeld */,
 				32804B3628C2D82700C24238 /* Preview Content */,
+				32F04E2728D662A1000BB7A9 /* ProfileView.swift */,
+				32F04E2928D662DE000BB7A9 /* CreateView.swift */,
+				32F04E2B28D662F4000BB7A9 /* FriendView.swift */,
+				32F04E2D28D662FC000BB7A9 /* InboxView.swift */,
 			);
 			path = MechBoard;
 			sourceTree = "<group>";
@@ -85,6 +104,32 @@
 				32804B4528C2DB9500C24238 /* CloudKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		32F04E1C28D64E54000BB7A9 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				32804B3228C2D82600C24238 /* HomeView.swift */,
+				32F04E1E28D64EE0000BB7A9 /* PostItem.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		32F04E1D28D64E68000BB7A9 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				32804B4728C2F5A800C24238 /* AuthViewModel.swift */,
+				32F04E2328D6503A000BB7A9 /* HomeViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		32F04E2028D64EF3000BB7A9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				32F04E2128D64F0A000BB7A9 /* Post.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,9 +202,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32F04E2828D662A1000BB7A9 /* ProfileView.swift in Sources */,
+				32F04E2A28D662DE000BB7A9 /* CreateView.swift in Sources */,
 				32804B4828C2F5A800C24238 /* AuthViewModel.swift in Sources */,
-				32804B3328C2D82600C24238 /* ContentView.swift in Sources */,
+				32804B3328C2D82600C24238 /* HomeView.swift in Sources */,
+				32F04E2428D6503A000BB7A9 /* HomeViewModel.swift in Sources */,
+				32F04E1F28D64EE0000BB7A9 /* PostItem.swift in Sources */,
+				32F04E2228D64F0A000BB7A9 /* Post.swift in Sources */,
 				32804B3128C2D82600C24238 /* MechBoardApp.swift in Sources */,
+				32F04E2C28D662F4000BB7A9 /* FriendView.swift in Sources */,
+				32F04E2E28D662FC000BB7A9 /* InboxView.swift in Sources */,
 				32804B3D28C2D82700C24238 /* MechBoard.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
