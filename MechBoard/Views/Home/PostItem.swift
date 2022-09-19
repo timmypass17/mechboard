@@ -9,15 +9,16 @@ import SwiftUI
 
 struct PostItem: View {
     @Binding var post: Post
+    var onClickOption: (Post) -> Void
     
     var body: some View {
         VStack(spacing: 0) {
             VStack(alignment: .leading) {
                 HStack {
                     Text("u/timmypass17")
-                    Text("2h")
+                    Text(post.timeCreatedFormatted())
                     Spacer()
-                    Button(action: {}) {
+                    Button(action: { onClickOption(post) }) {
                         Image(systemName: "ellipsis")
                     }
                 }
@@ -45,13 +46,7 @@ struct PostItem: View {
                 Button(action: {}) {
                     Label("165", systemImage: "message")
                 }
-                
-                Spacer()
-                
-                Button(action: {}) {
-                    Label("3159", systemImage: "message")
-                }
-                
+            
                 Spacer()
                 
                 Button(action: {}) {
@@ -62,11 +57,12 @@ struct PostItem: View {
             .font(.footnote)
         }
     }
+    
 }
 
-struct PostItem_Previews: PreviewProvider {
-    static var previews: some View {
-        PostItem(post: .constant(Post.samplePosts[0]))
-            .previewLayout(.sizeThatFits)
-    }
-}
+//struct PostItem_Previews: PreviewProvider {
+//    static var previews: some View {
+//        PostItem(post: .constant(Post.samplePosts[0]))
+//            .previewLayout(.sizeThatFits)
+//    }
+//}

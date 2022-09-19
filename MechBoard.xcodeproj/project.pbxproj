@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		321AEEC828D78F870038F726 /* CreateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321AEEC728D78F870038F726 /* CreateViewModel.swift */; };
 		32804B3128C2D82600C24238 /* MechBoardApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32804B3028C2D82600C24238 /* MechBoardApp.swift */; };
 		32804B3328C2D82600C24238 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32804B3228C2D82600C24238 /* HomeView.swift */; };
 		32804B3528C2D82700C24238 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32804B3428C2D82700C24238 /* Assets.xcassets */; };
@@ -17,13 +18,11 @@
 		32F04E1F28D64EE0000BB7A9 /* PostItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F04E1E28D64EE0000BB7A9 /* PostItem.swift */; };
 		32F04E2228D64F0A000BB7A9 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F04E2128D64F0A000BB7A9 /* Post.swift */; };
 		32F04E2428D6503A000BB7A9 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F04E2328D6503A000BB7A9 /* HomeViewModel.swift */; };
-		32F04E2828D662A1000BB7A9 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F04E2728D662A1000BB7A9 /* ProfileView.swift */; };
 		32F04E2A28D662DE000BB7A9 /* CreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F04E2928D662DE000BB7A9 /* CreateView.swift */; };
-		32F04E2C28D662F4000BB7A9 /* FriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F04E2B28D662F4000BB7A9 /* FriendView.swift */; };
-		32F04E2E28D662FC000BB7A9 /* InboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F04E2D28D662FC000BB7A9 /* InboxView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		321AEEC728D78F870038F726 /* CreateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewModel.swift; sourceTree = "<group>"; };
 		32804B2D28C2D82600C24238 /* MechBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MechBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32804B3028C2D82600C24238 /* MechBoardApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MechBoardApp.swift; sourceTree = "<group>"; };
 		32804B3228C2D82600C24238 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -36,10 +35,7 @@
 		32F04E1E28D64EE0000BB7A9 /* PostItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostItem.swift; sourceTree = "<group>"; };
 		32F04E2128D64F0A000BB7A9 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		32F04E2328D6503A000BB7A9 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		32F04E2728D662A1000BB7A9 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		32F04E2928D662DE000BB7A9 /* CreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateView.swift; sourceTree = "<group>"; };
-		32F04E2B28D662F4000BB7A9 /* FriendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendView.swift; sourceTree = "<group>"; };
-		32F04E2D28D662FC000BB7A9 /* InboxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +50,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		321AEEC928D830C40038F726 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				32F04E1C28D64E54000BB7A9 /* Home */,
+				321AEECA28D830DB0038F726 /* Create */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		321AEECA28D830DB0038F726 /* Create */ = {
+			isa = PBXGroup;
+			children = (
+				32F04E2928D662DE000BB7A9 /* CreateView.swift */,
+			);
+			path = Create;
+			sourceTree = "<group>";
+		};
 		32804B2428C2D82600C24238 = {
 			isa = PBXGroup;
 			children = (
@@ -78,14 +91,10 @@
 				32804B3028C2D82600C24238 /* MechBoardApp.swift */,
 				32F04E1D28D64E68000BB7A9 /* ViewModels */,
 				32F04E2028D64EF3000BB7A9 /* Models */,
-				32F04E1C28D64E54000BB7A9 /* Home */,
+				321AEEC928D830C40038F726 /* Views */,
 				32804B3428C2D82700C24238 /* Assets.xcassets */,
 				32804B3B28C2D82700C24238 /* MechBoard.xcdatamodeld */,
 				32804B3628C2D82700C24238 /* Preview Content */,
-				32F04E2728D662A1000BB7A9 /* ProfileView.swift */,
-				32F04E2928D662DE000BB7A9 /* CreateView.swift */,
-				32F04E2B28D662F4000BB7A9 /* FriendView.swift */,
-				32F04E2D28D662FC000BB7A9 /* InboxView.swift */,
 			);
 			path = MechBoard;
 			sourceTree = "<group>";
@@ -120,6 +129,7 @@
 			children = (
 				32804B4728C2F5A800C24238 /* AuthViewModel.swift */,
 				32F04E2328D6503A000BB7A9 /* HomeViewModel.swift */,
+				321AEEC728D78F870038F726 /* CreateViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -202,7 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32F04E2828D662A1000BB7A9 /* ProfileView.swift in Sources */,
+				321AEEC828D78F870038F726 /* CreateViewModel.swift in Sources */,
 				32F04E2A28D662DE000BB7A9 /* CreateView.swift in Sources */,
 				32804B4828C2F5A800C24238 /* AuthViewModel.swift in Sources */,
 				32804B3328C2D82600C24238 /* HomeView.swift in Sources */,
@@ -210,8 +220,6 @@
 				32F04E1F28D64EE0000BB7A9 /* PostItem.swift in Sources */,
 				32F04E2228D64F0A000BB7A9 /* Post.swift in Sources */,
 				32804B3128C2D82600C24238 /* MechBoardApp.swift in Sources */,
-				32F04E2C28D662F4000BB7A9 /* FriendView.swift in Sources */,
-				32F04E2E28D662FC000BB7A9 /* InboxView.swift in Sources */,
 				32804B3D28C2D82700C24238 /* MechBoard.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,6 +11,7 @@ import SwiftUI
 struct MechBoardApp: App {
     @StateObject private var authViewModel = AuthViewModel()
     @StateObject private var homeViewModel = HomeViewModel()
+    @StateObject private var createViewModel = CreateViewModel()
 
     var body: some Scene {
         WindowGroup {
@@ -19,8 +20,8 @@ struct MechBoardApp: App {
                     .tabItem {
                         Label("Home", systemImage: "house")
                     }
-                FriendView()
-                    .badge(3)
+                HomeView()
+//                    .badge(3)
                     .tabItem {
                         Label("Friends", systemImage: "person.2")
                     }
@@ -28,12 +29,13 @@ struct MechBoardApp: App {
                     .tabItem {
                         Label("", systemImage: "plus")
                     }
-                InboxView()
-                    .badge("14")
+                    .environmentObject(CreateViewModel())
+                HomeView()
+//                    .badge("14")
                     .tabItem {
                         Label("Inbox", systemImage: "tray")
                     }
-                ProfileView()
+                HomeView()
                     .tabItem {
                         Label("Profile", systemImage: "person")
                     }
