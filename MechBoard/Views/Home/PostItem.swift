@@ -13,21 +13,25 @@ struct PostItem: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            VStack(alignment: .leading) {
-                HStack {
-                    Text("u/timmypass17")
-                    Text(post.timeCreatedFormatted())
-                    Spacer()
-                    Button(action: { onClickOption(post) }) {
-                        Image(systemName: "ellipsis")
+            HStack {
+                Circle()
+                    .fill(.regularMaterial)
+                    .frame(width: 50)
+                VStack(alignment: .leading) {
+                    HStack {
+                        Text("u/timmypass17")
+                        Text(post.timeCreatedFormatted())
+                        Spacer()
+                        Button(action: { onClickOption(post) }) {
+                            Image(systemName: "ellipsis")
+                        }
                     }
+                    .font(.footnote)
+                    
+                    Text(post.title)
+                        .font(.body)
+                        .bold()
                 }
-                .font(.footnote)
-                
-                
-                Text(post.title)
-                    .font(.body)
-                    .bold()
             }
             .padding()
             
@@ -55,14 +59,18 @@ struct PostItem: View {
             }
             .padding()
             .font(.footnote)
+            
+            Divider()
+                .padding(.top, 1)
         }
     }
     
 }
 
-//struct PostItem_Previews: PreviewProvider {
-//    static var previews: some View {
-//        PostItem(post: .constant(Post.samplePosts[0]))
-//            .previewLayout(.sizeThatFits)
-//    }
-//}
+struct PostItem_Previews: PreviewProvider {
+    static var previews: some View {
+        PostItem(post: .constant(Post.samplePosts[0]), onClickOption: {_ in })
+            .previewLayout(.sizeThatFits)
+//            .border(.blue)
+    }
+}

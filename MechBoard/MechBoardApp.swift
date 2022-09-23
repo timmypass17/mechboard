@@ -23,7 +23,7 @@ struct MechBoardApp: App {
                 HomeView()
 //                    .badge(3)
                     .tabItem {
-                        Label("Friends", systemImage: "person.2")
+                        Label("Market", systemImage: "banknote")
                     }
                 CreateView()
                     .tabItem {
@@ -31,7 +31,7 @@ struct MechBoardApp: App {
                     }
                     .environmentObject(CreateViewModel())
                 HomeView()
-//                    .badge("14")
+//                    .badge("14") or .badge(14)
                     .tabItem {
                         Label("Inbox", systemImage: "tray")
                     }

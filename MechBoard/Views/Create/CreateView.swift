@@ -14,15 +14,15 @@ struct CreateView: View {
     var body: some View {
         VStack {
             TextField("Title", text: $createViewModel.post.title)
-            Button("Create", action: { Task { await handleCreateButton(post: createViewModel.post) } })
+            Button("Create", action: { Task { await handleCreateButton() } })
                 .buttonStyle(.borderedProminent)
         }
         .navigationTitle("Share your keyboard!")
     }
     
-    private func handleCreateButton(post: Post) async {
-        homeViewModel.posts.insert(post, at: 0) // add post locally
-        await createViewModel.createPost(post: post)
+    private func handleCreateButton() async {
+        homeViewModel.posts.insert(self.createViewModel.post, at: 0) // add post locally
+        await createViewModel.createPost()
     }
     
     

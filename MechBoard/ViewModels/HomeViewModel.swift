@@ -13,7 +13,6 @@ import CloudKit
 // operation.desiredKeys = ["title", "description", ...] // returns only title and description
 @MainActor
 class HomeViewModel: ObservableObject {
-//    @Published var posts = Post.samplePosts
     @Published var posts: [Post] = []
     
     init() {

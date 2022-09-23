@@ -13,7 +13,7 @@ class CreateViewModel: ObservableObject {
     
     // note: 1. cloudkit automatically creates recordType
     //       2. user must be logged into icloud to save records, else nothing happens when creating
-    func createPost(post: Post) async {
+    func createPost() async {
         
         // note: cloudkit automatically creates recordType
         let record = CKRecord(recordType: "Post")   // 1. Create a record (object being stored onto icloud)

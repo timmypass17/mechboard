@@ -20,7 +20,7 @@ struct HomeView: View {
             ForEach($homeViewModel.posts, id: \.record.recordID) { $post in
                 PostItem(post: $post, onClickOption: handleOption)
                     .listRowSeparator(.hidden)
-                Divider()
+                    .listRowInsets(EdgeInsets())
             }
         }
         .sheet(isPresented: $isShowingSheet, onDismiss: {}) {
