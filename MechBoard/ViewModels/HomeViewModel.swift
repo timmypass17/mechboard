@@ -37,7 +37,7 @@ class HomeViewModel: ObservableObject {
             switch result {
             case .success(let record):
                 guard let title = record["title"] as? String else { return }
-                returnedPosts.append(Post(title: title, record: record))
+                returnedPosts.append(Post(record: record, title: title))
 //                print("Adding post...")
             case.failure(let error):
                 print("Error fetching post: \(error)")

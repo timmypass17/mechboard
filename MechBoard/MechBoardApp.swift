@@ -30,6 +30,7 @@ struct MechBoardApp: App {
                         Label("", systemImage: "plus")
                     }
                     .environmentObject(CreateViewModel())
+                    .environmentObject(HomeViewModel())
                 HomeView()
 //                    .badge("14") or .badge(14)
                     .tabItem {

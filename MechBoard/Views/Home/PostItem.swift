@@ -35,20 +35,26 @@ struct PostItem: View {
             }
             .padding()
             
-            Rectangle()
-                .fill(.regularMaterial)
-                .frame(height: 300)
+            Image("sample_post")
+                .resizable()
+                .scaledToFit() // or .aspectRatio(contentMode: .fit)
+            
+            if !post.caption.isEmpty {
+                Caption(text: "\"\(post.caption)\"")
+                    .lineLimit(2)
+                    .italic()
+            }
             
             HStack {
                 Button(action: {}) {
-                    Label("26.0k", systemImage: "heart")
+                    Label("\(post.likes.count)", systemImage: "heart")
                 }
 
                 
                 Spacer()
                 
                 Button(action: {}) {
-                    Label("165", systemImage: "message")
+                    Label("0", systemImage: "message")
                 }
             
                 Spacer()
@@ -72,5 +78,18 @@ struct PostItem_Previews: PreviewProvider {
         PostItem(post: .constant(Post.samplePosts[0]), onClickOption: {_ in })
             .previewLayout(.sizeThatFits)
 //            .border(.blue)
+    }
+}
+
+struct Caption: View {
+    let text: String
+    var body: some View {
+        HStack {
+            Text(text)
+                .font(.caption)
+                .padding()
+                .frame(maxWidth: .infinity)
+                .background(.regularMaterial)
+        }
     }
 }

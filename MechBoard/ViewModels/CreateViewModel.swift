@@ -9,7 +9,7 @@ import Foundation
 import CloudKit
 
 class CreateViewModel: ObservableObject {
-    @Published var post: Post = Post(title: "", record: CKRecord(recordType: "Post"))
+    @Published var post: Post = Post()
     
     // note: 1. cloudkit automatically creates recordType
     //       2. user must be logged into icloud to save records, else nothing happens when creating
@@ -17,8 +17,16 @@ class CreateViewModel: ObservableObject {
         
         // note: cloudkit automatically creates recordType
         let record = CKRecord(recordType: "Post")   // 1. Create a record (object being stored onto icloud)
-        record.setValuesForKeys([                   // 2. Set values of record
-            "title": post.title
+        record.setValuesForKeys([                   // 2. Set values of record, can't store objects, just break Keyboard object into parts
+            "title": post.title,
+            "caption": post.caption,
+            "likes": post.likes,
+            "size": post.keyboard.size.rawValue,
+            "keycaps": post.keyboard.keycaps,
+            "switches": post.keyboard.switches,
+            "case": post.keyboard.case,
+            "plate": post.keyboard.plate,
+            "foam": post.keyboard.foam
         ])
         // 3. Save to icloud (public database)
         await savePost(record: record)

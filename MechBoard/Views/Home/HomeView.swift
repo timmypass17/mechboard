@@ -13,14 +13,16 @@ struct HomeView: View {
     @EnvironmentObject var authViewModel: AuthViewModel
     @EnvironmentObject var homeViewModel: HomeViewModel
     @State private var isShowingSheet = false
-    @State var selectedPost: Post = Post(title: "", record: CKRecord(recordType: "Post"))
+    @State var selectedPost: Post = Post()
     
     var body: some View {
-        List {
-            ForEach($homeViewModel.posts, id: \.record.recordID) { $post in
-                PostItem(post: $post, onClickOption: handleOption)
-                    .listRowSeparator(.hidden)
-                    .listRowInsets(EdgeInsets())
+        ScrollView {
+            LazyVStack {
+                ForEach($homeViewModel.posts, id: \.record.recordID) { $post in
+                    PostItem(post: $post, onClickOption: handleOption)
+                        .listRowSeparator(.hidden)
+                        .listRowInsets(EdgeInsets())
+                }
             }
         }
         .sheet(isPresented: $isShowingSheet, onDismiss: {}) {
@@ -34,7 +36,6 @@ struct HomeView: View {
             }
             
         }
-        
         .listStyle(.plain)
         .buttonStyle(.plain)
         .refreshable {

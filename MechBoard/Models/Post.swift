@@ -9,12 +9,15 @@ import Foundation
 import CloudKit
 
 struct Post {
-    var title: String
-    var record: CKRecord
+    var record: CKRecord = CKRecord(recordType: "Post")
+    var title: String = ""
+    var caption: String = ""
+    var likes: [String] = [] // user's id, could use CKRecord.Reference? kinda complicated
+    var keyboard: Keyboard = Keyboard()
     
     func timeCreatedFormatted() -> String{
         guard let creationDate = record.creationDate else { return "just now" }
-        
+                
         // ask for the full relative date
         let formatter = RelativeDateTimeFormatter()
         formatter.unitsStyle = .full
@@ -28,9 +31,13 @@ struct Post {
 
 extension Post {
     static let samplePosts = [
-        Post(title: "A simple setup, but it works so well.", record: CKRecord(recordType: "Post")),
-        Post(title: "How about custom cables with display?", record: CKRecord(recordType: "Post")),
-        Post(title: "Spent over $500 and converted 3 more friends into the hobby. After touching my SA caps they already wanted more", record: CKRecord(recordType: "Post")),
-        Post(title: "Purple Owl, a laster cut custom 60%", record: CKRecord(recordType: "Post"))
+        Post(
+            record: CKRecord(recordType: "Post"),
+            title: "dalgona",
+            caption: "from a calming and refreshing whipped coffee to a fun korean childhood favorite, dalgona is a popular confectionary based from south korea."
+            ),
+        Post(record: CKRecord(recordType: "Post"), title: "How about custom cables with display?"),
+        Post(record: CKRecord(recordType: "Post"), title: "Spent over $500 and converted 3 more friends into the hobby. After touching my SA caps they already wanted more"),
+        Post(record: CKRecord(recordType: "Post"), title: "Purple Owl, a laster cut custom 60%")
     ]
 }
