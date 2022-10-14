@@ -36,8 +36,13 @@ class HomeViewModel: ObservableObject {
         operation.recordMatchedBlock = { recordID, result in
             switch result {
             case .success(let record):
+                // unwarp optionals
                 guard let title = record["title"] as? String else { return }
-                returnedPosts.append(Post(record: record, title: title))
+                guard let caption = record["caption"] as? String else { return }
+                guard let image = record["image"] as? CKAsset else { return }
+
+                // add post locally
+                returnedPosts.append(Post(record: record, title: title, caption: caption, image: image))
 //                print("Adding post...")
             case.failure(let error):
                 print("Error fetching post: \(error)")
@@ -60,6 +65,7 @@ class HomeViewModel: ObservableObject {
         CKContainer.default().publicCloudDatabase.add(operation)    // executes operation
     }
     
+    // Only OP can delete post, no one else can.
     func deletePost(record: CKRecord) async {
         let container = CKContainer.default()
         let database = container.publicCloudDatabase
@@ -68,7 +74,7 @@ class HomeViewModel: ObservableObject {
             posts = posts.filter {$0.record.recordID != record.recordID} // delete post locally aswell (better than re-fetching data to update ui)
             print("Deleted post!")
         } catch {
-            print("Error deleting post")
+            print("Error deleting post: \(error)")
         }
     }
 }

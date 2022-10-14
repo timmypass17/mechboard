@@ -5,6 +5,7 @@
 //  Created by Timmy Nguyen on 9/17/22.
 //
 
+import PhotosUI
 import SwiftUI
 
 struct CreateView: View {
@@ -20,11 +21,24 @@ struct CreateView: View {
                     CreateTextField(title: "Description", placeholder: "Description", text: $createViewModel.post.caption)
                 }
                 
-                Section(header: Text("Select an image from photo gallery")) {
-                    Text("")
+                Section(header: Text("Choose an image") /** , footer: Text("*only accepts .png files").italic() **/) {
+                    KeyboardImage(imageState: createViewModel.imageState)
+                        .overlay(alignment: .bottomTrailing) {
+                            PhotosPicker(
+                                selection: $createViewModel.imageSelection,
+                                matching: .images,
+                                photoLibrary: .shared()) {
+                                    Image(systemName: "pencil.circle.fill")
+                                        .symbolRenderingMode(.multicolor)
+                                        .font(.system(size: 35))
+                                        .foregroundColor(.yellow)
+                            }
+                            .buttonStyle(.borderless) // make hit box on icon
+                        }
+                        .frame(maxWidth: .infinity)
                 }
-                
-                Section(header: Text("Keyboard")) {
+
+                Section(header: Text("Keyboard Specs")) {
                     Picker("Size", selection: $createViewModel.post.keyboard.size) {
                         Text("100% (Full Sized)").tag(KeyboardSize.full_sized)
                         Text("96% (Compact Full Sized)").tag(KeyboardSize.compact_full_sized)
@@ -69,6 +83,8 @@ struct CreateView_Previews: PreviewProvider {
         CreateView()
             .environmentObject(CreateViewModel())
             .environmentObject(HomeViewModel())
+        
+        KeyboardImage(imageState: .empty)
     }
 }
 
@@ -80,7 +96,7 @@ struct CreateTextField: View {
     var body: some View {
         HStack {
             Text(title)
-                .frame(width: 155, alignment: .leading)
+                .frame(width: 151, alignment: .leading)
             
             TextField(placeholder, text: $text)
                 .createTextFieldStyle()
@@ -106,3 +122,29 @@ extension View {
 }
 
 
+struct KeyboardImage: View {
+    let imageState: CreateViewModel.ImageState
+    
+    var body: some View {
+        switch imageState {
+        case .success(let data):
+            Image(uiImage: UIImage(data: data)!)
+                .resizable().scaledToFit()
+        case .loading:
+            ProgressView()
+        case .empty:
+            Image(systemName: "keyboard")
+                .resizable()
+                .scaledToFit()
+                .frame(height: 100)
+                .padding()
+                .foregroundColor(.secondary)
+//                .border(.orange)
+            
+        case .failure(let error):
+            Image(systemName: "exclamationmark.triangle.fill")
+                .font(.system(size: 40))
+                .foregroundColor(.white)
+        }
+    }
+}

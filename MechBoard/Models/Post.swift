@@ -14,6 +14,7 @@ struct Post {
     var caption: String = ""
     var likes: [String] = [] // user's id, could use CKRecord.Reference? kinda complicated
     var keyboard: Keyboard = Keyboard()
+    var image: CKAsset?
     
     func timeCreatedFormatted() -> String{
         guard let creationDate = record.creationDate else { return "just now" }

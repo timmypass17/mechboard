@@ -13,6 +13,8 @@ struct PostItem: View {
     
     var body: some View {
         VStack(spacing: 0) {
+            Divider()
+            
             HStack {
                 Circle()
                     .fill(.regularMaterial)
@@ -35,9 +37,12 @@ struct PostItem: View {
             }
             .padding()
             
-            Image("sample_post")
-                .resizable()
-                .scaledToFit() // or .aspectRatio(contentMode: .fit)
+            AsyncImage(url: post.image?.fileURL) { image in
+                image.resizable()
+            } placeholder: {
+                Color.gray
+            }
+            .frame(maxWidth: .infinity, maxHeight: 250)
             
             if !post.caption.isEmpty {
                 Caption(text: "\"\(post.caption)\"")

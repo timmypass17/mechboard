@@ -16,31 +16,34 @@ struct HomeView: View {
     @State var selectedPost: Post = Post()
     
     var body: some View {
-        ScrollView {
-            LazyVStack {
-                ForEach($homeViewModel.posts, id: \.record.recordID) { $post in
-                    PostItem(post: $post, onClickOption: handleOption)
-                        .listRowSeparator(.hidden)
-                        .listRowInsets(EdgeInsets())
+        NavigationStack {
+            ScrollView {
+                LazyVStack(spacing: 12) {
+                    ForEach($homeViewModel.posts, id: \.record.recordID) { $post in
+                        PostItem(post: $post, onClickOption: handleOption)
+                            .listRowSeparator(.hidden)
+                            .listRowInsets(EdgeInsets())
+                    }
                 }
             }
-        }
-        .sheet(isPresented: $isShowingSheet, onDismiss: {}) {
-            VStack {
-                Button("Delete", role: .destructive, action: {
-                    Task {
-                        await homeViewModel.deletePost(record: selectedPost.record)
-                        dismiss()
-                    }
-                })
+            .sheet(isPresented: $isShowingSheet, onDismiss: {}) {
+                VStack {
+                    Button("Delete", role: .destructive, action: {
+                        Task {
+                            await homeViewModel.deletePost(record: selectedPost.record)
+                            dismiss()
+                        }
+                    })
+                }
+                
             }
-            
-        }
-        .listStyle(.plain)
-        .buttonStyle(.plain)
-        .refreshable {
-            print("Refreshing")
-            homeViewModel.fetchPosts()
+            .listStyle(.plain)
+            .buttonStyle(.plain)
+            .refreshable {
+                print("Refreshing")
+                homeViewModel.fetchPosts()
+            }
+            .navigationTitle("mechboard")
         }
     }
     
